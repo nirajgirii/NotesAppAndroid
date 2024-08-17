@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF4DF"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Enter a new Description"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/new_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/roundshape_note"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="top|start"
+        android:hint="Note Description"
+        android:inputType="textMultiLine|text"
+        android:lineSpacingExtra="4dp"
+        android:maxLines="10"
+        android:minLines="5"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/new_description_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_in_personal_notes"
+        android:padding="10dp"
+        android:text="Submit" />
+
+</LinearLayout>

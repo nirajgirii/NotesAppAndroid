@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAF4DF">
+
+    <EditText
+        android:id="@+id/edit_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note Title"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/roundshape_note"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edit_note_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note Subtitle"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@drawable/roundshape_note"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edit_note_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/roundshape_note"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="top|start"
+        android:hint="Note Description"
+        android:inputType="textMultiLine|text"
+        android:lineSpacingExtra="4dp"
+        android:maxLines="10"
+        android:minLines="5"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/save_note_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundshape_note"
+        android:text="Save Note"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="12dp" />
+
+</LinearLayout>
