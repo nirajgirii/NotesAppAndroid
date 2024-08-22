@@ -1,5 +1,7 @@
 package com.personal_notes;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -118,15 +120,33 @@ public class NotesHomepageActivity extends AppCompatActivity {
                 });
 
                 deleteButton.setOnClickListener(new View.OnClickListener() {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NotesHomepageActivity.this);
+
                     @Override
                     public void onClick(View v) {
-                        int currentNoteId = (int) noteView.getTag();
-                        if (databaseHelper.deleteNoteById(currentNoteId)) {
-                            Toast.makeText(NotesHomepageActivity.this, "Note deleted successfully", Toast.LENGTH_SHORT).show();
-                            displayNotes(); // Refresh the note list
-                        } else {
-                            Toast.makeText(NotesHomepageActivity.this, "Failed to delete note", Toast.LENGTH_SHORT).show();
-                        }
+                        builder.setTitle("Confirmation")
+                                .setMessage("Are you sure you want to delete this note?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        int currentNoteId = (int) noteView.getTag();
+                                        if (databaseHelper.deleteNoteById(currentNoteId)) {
+                                            Toast.makeText(NotesHomepageActivity.this, "Note deleted successfully", Toast.LENGTH_SHORT).show();
+                                            displayNotes(); // Refresh the note list
+                                        } else {
+                                            Toast.makeText(NotesHomepageActivity.this, "Failed to delete note", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     }
                 });
 
